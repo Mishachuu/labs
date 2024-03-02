@@ -1,0 +1,11 @@
+#!/bin/bash
+mkdir b
+cd b
+mkdir c
+cd c
+echo caatts >> cat.txt
+echo dogsss >> dog.txt
+ls -a
+mkdir rand
+cd rand
+dd if=/dev/urandom of=randd.bin bs=500 count=1
