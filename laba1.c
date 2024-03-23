@@ -15,7 +15,7 @@ int main() {
     mkdir("a_0/b_3", 0755);
     mkdir("a_0/b_3/c_3", 0755);
 
-    symlink("a_1", "a_0");
+    symlink("a_0", "a_1");
     
     char* dogText = "dog";
     int dogFile = open("a_0/b_1.txt", O_CREAT | O_WRONLY, 0644);
@@ -33,9 +33,9 @@ int main() {
     close(c0File);
     close(zero_fd);
  
-    symlink("a_2/b_2/c_1.bin", "a_2/b_2/c_0.bin");
+    symlink("a_2/b_2/c_0.bin", "a_2/b_2/c_1.bin");
 
-    link("a_2/b_2/c_2.bin", "a_0/b_3/c_0.bin");
+    link("a_2/b_2/c_0.bin", "a_0/b_3/c_2.bin");
 
     return 0;
 }
