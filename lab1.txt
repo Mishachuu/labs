@@ -1,11 +1,17 @@
 #!/bin/bash
-mkdir b
-cd b
-mkdir c
-cd c
-echo caatts >> cat.txt
-echo dogsss >> dog.txt
-ls -a
-mkdir rand
-cd rand
-dd if=/dev/urandom of=randd.bin bs=500 count=1
+
+mkdir -p a_0/b_3/c_3
+mkdir -p a_2/b_0
+mkdir -p a_2/b_2
+
+ln -s a_0 a_1
+
+echo "dog" > a_0/b_1.txt
+
+dd if=/dev/zero of=a_2/b_2/c_0.bin bs=1 count=909
+
+ln -s c_0.bin a_2/b_2/c_1.bin
+
+ln a_2/b_2/c_0.bin a_0/b_3/c_2.bin
+
+tree .
